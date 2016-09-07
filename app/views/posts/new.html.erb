@@ -1,19 +1,3 @@
 <h1>New Post</h1>
 
-<% if @post.errors.any? %>
-  <h3>Oops, there was a problem creating a post. Try again!</h3>
-  <ul>
-    <% @post.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-
-<%= form_for @post do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :link %>
-  <%= f.text_field :link %>
-  <%= f.submit %>
-<% end %>
+<%= render "form" %>
