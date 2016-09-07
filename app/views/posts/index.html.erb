@@ -1,11 +1,11 @@
-<h1>Posts</h1>
+<h1>Hacker News</h1>
 
 <ol>
 <% @posts.each do |post| %>
   <li>
-    <%= post.name %> |
-    <%= post.link %> |
+    <%= link_to post.name, post.link %>
     <%= post.votes %>
+    <%= link_to "comments", post_path(post) %>
   </li>
 <% end %>
 </ol>
