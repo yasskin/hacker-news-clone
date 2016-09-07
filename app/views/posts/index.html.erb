@@ -4,6 +4,10 @@
 <ol>
 <% @posts.each do |post| %>
   <li>
+    <%= form_for post do |p| %>
+      <%= p.hidden_field :votes, :value => post.votes + 1 %>
+      <%= image_submit_tag "triangle.jpg"%>
+    <% end %>
     <%= link_to post.name, post.link %>
     <%= post.votes %>
     <%= link_to "comments", post_path(post) %>
