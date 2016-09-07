@@ -1,0 +1,6 @@
+<%= render "layouts/errors", :object => @comment %>
+
+<%= form_for [@post, @comment] do |f| %>
+  <%= f.text_area :twaddle %>
+  <p><%= f.submit("add comment") %></p>
+<% end %>

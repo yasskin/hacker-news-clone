@@ -1,2 +1,9 @@
 <h4><%= @post.name %></h4>
 <p><%= link_to @post.link, @post.link %></p>
+
+<%= render "comments/form" %>
+
+<h2>Comments</h2>
+<% @post.comments.each do |comment| %>
+  <p><%= comment.twaddle %></p>
+<% end %>
